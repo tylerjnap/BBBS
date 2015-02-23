@@ -2,7 +2,9 @@ int ledPin1 = 7;
 int ledPin2 = 8;
 int ledPin3 = 9;
 
-int delayTime = 1000;
+int delayTime = 0;
+
+int potPin = A5;
 
 void setup() {
   // put your setup code here, to run once:
@@ -13,6 +15,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  delayTime = analogRead(potPin); 
+  
   digitalWrite(ledPin3, LOW);
   digitalWrite(ledPin1, HIGH);
   delay(delayTime);
@@ -25,3 +29,4 @@ void loop() {
   digitalWrite(ledPin3, HIGH);
   delay(delayTime);
 }
+
