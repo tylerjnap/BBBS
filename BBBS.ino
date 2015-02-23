@@ -1,16 +1,16 @@
-int ledPin = 8;
+int ledPin = 7;
 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(8, OUTPUT);
-  
+  pinMode(ledPin, OUTPUT);
+
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   delay(1000);
-  digitalWrite(8, HIGH);
+  digitalWrite(ledPin, HIGH);
   delay(1000);
-  digitalWrite(8, LOW);
+  digitalWrite(ledPin, LOW);
 }
