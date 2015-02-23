@@ -1,32 +1,22 @@
-int ledPin1 = 7;
-int ledPin2 = 8;
-int ledPin3 = 9;
-
-int delayTime = 0;
+int ledPin = 9;
 
 int potPin = A5;
+int brightness = 0;
+
+int val = 0;
+int sensorMin = 1023;
+int sensorMax = 0;
 
 void setup() {
   // put your setup code here, to run once:
-  pinMode(ledPin1, OUTPUT);
-  pinMode(ledPin2, OUTPUT);
-  pinMode(ledPin3, OUTPUT);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delayTime = analogRead(potPin); 
-  
-  digitalWrite(ledPin3, LOW);
-  digitalWrite(ledPin1, HIGH);
-  delay(delayTime);
-
-  digitalWrite(ledPin1, LOW);
-  digitalWrite(ledPin2, HIGH);
-  delay(delayTime);
-
-  digitalWrite(ledPin2, LOW);
-  digitalWrite(ledPin3, HIGH);
-  delay(delayTime);
+  val = analogRead(potPin);
+  brightness = map(val, sensorMin, sensorMax, 0, 255); 
+  analogWrite(ledPin, brightness);
+  delay(30);
 }
 
